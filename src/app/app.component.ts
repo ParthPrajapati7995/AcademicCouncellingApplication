@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'New World of Angular JS';
+
+  alertMessage = true;
+  name="New User";
+
+  changeUserName(userName)
+  {
+    this.name = userName;
+    this.alertMessage = false;
+    console.log(this.name);
+  }
 }

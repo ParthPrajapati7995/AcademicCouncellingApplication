@@ -1,14 +1,6 @@
-<div *ngIf="alertMessage; then LogInAlert; else GreetingToUser"></div>
-<ng-template #LogInAlert>
-  <h1> Please Log In into Account </h1>
-</ng-template>
-<ng-template  #GreetingToUser>
-  <h1> Welcome {{name}} </h1>
-</ng-template>
-<input #userName type="text">
-<button (click)="changeUserName(userName.value)"> Log In </button>
-<div *ngIf="!alertMessage">
-  <h1> Current Donation Amount:{{amount | currency: 'EUR'}}</h1>
+
+<div style="text-align:center" *ngIf="!alertMessage">
+  <h1 > Current Donation Amount:{{amount | currency: 'EUR'}}</h1>
   <input #donation type="text">
   <button (click)="displayDonationAmount(donation.value)"> Donate </button>
 </div>
