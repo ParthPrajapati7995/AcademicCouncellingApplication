@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EducationDetailsModel } from '../data-models/education-details.model';
 
 @Component({
   selector: 'app-education-details',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationDetailsComponent implements OnInit {
 
-  constructor() { }
+  educationDetails: Array<EducationDetailsModel>;
 
-  ngOnInit() {
+  constructor() {
+    this.educationDetails = new Array<EducationDetailsModel>();
   }
 
+  ngOnInit() {
+    this.educationDetails.push(new EducationDetailsModel());
+  }
+
+  addDetail(): void {
+    this.educationDetails.push(new EducationDetailsModel());
+  }
+
+  removeDetail(indx: number): void {
+    this.educationDetails.splice(indx, 1);
+  }
 }
