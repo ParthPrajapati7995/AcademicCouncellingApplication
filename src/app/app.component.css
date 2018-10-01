@@ -1,0 +1,23 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+.radio{
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 15px;
+}
+
+.active{
+  background-color: black;
+}

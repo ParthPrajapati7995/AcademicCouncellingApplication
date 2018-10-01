@@ -7,14 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'New World of Angular JS';
+  step = 0;
 
-  alertMessage = true;
-  name="New User";
+  setStep(index: number) {
+    this.step = index;
+  }
 
-  changeUserName(userName)
-  {
-    this.name = userName;
-    this.alertMessage = false;
-    console.log(this.name);
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 }

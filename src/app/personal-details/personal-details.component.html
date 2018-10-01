@@ -1,0 +1,35 @@
+<mat-accordion class="example-headers-align">
+<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title >
+      Personal Information
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <hr style="border: 0.8px solid #2421c4;" />
+  <div class="form">
+    <mat-form-field>
+      <input matInput placeholder="Name as in 10th/12th marksheet">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Father's/Guardian's name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h3>Select Gender</h3>
+    <mat-radio-group class="radio">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        &nbsp;
+        <mat-radio-button value="2">Female</mat-radio-button>
+        &nbsp;
+        <mat-radio-button value="3">Transgender</mat-radio-button>
+        &nbsp;
+      </mat-radio-group>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </div>
+</mat-expansion-panel>
+</mat-accordion>
