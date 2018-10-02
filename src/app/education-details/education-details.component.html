@@ -1,5 +1,5 @@
 <mat-accordion class="example-headers-align">
-  <mat-expansion-panel [expanded]="true" hideToggle>
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
         Acadamic Details
@@ -16,22 +16,21 @@
         <mat-form-field>
           <input matInput placeholder="Discipline" [(ngModel)]="educationDetails[i].discipline">
         </mat-form-field>
+        <button *ngIf="i===(educationDetails.length-1)" mat-button color="primary" (click)="addDetail()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
         <mat-form-field>
           <input matInput placeholder="University/Institute" [(ngModel)]="educationDetails[i].institute">
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="City" [(ngModel)]="educationDetails[i].city">
         </mat-form-field>
+        <button *ngIf="i!=0 || i!=(educationDetails.length-1)" mat-button color="warn" (click)="removeDetail(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
         <mat-form-field>
           <input matInput placeholder="State" [(ngModel)]="educationDetails[i].state">
         </mat-form-field>
-
-        <div *ngIf="i===(educationDetails.length-1)">
-          <button mat-button color="primary" (click)="addDetail()">Add</button>
-        </div>
-        <div *ngIf="i!=0 || i!=(educationDetails.length-1)">
-          <button mat-button color="warn" (click)="removeDetail(i)">Remove</button>
-        </div>
       </div>
       <mat-action-row>
         <button mat-button color="warn" (click)="prevComponent()">Previous</button>
