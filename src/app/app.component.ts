@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'New World of Angular JS';
-  step = 0;
+  public step = 0;
 
   setStep(index: number) {
     this.step = index;
