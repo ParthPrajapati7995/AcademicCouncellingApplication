@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { EducationDetailsComponent } from './education-details/education-details.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { ResearchInterestsComponent } from './research-interests/research-interests.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     TestComponent,
     routingComponents,
     EducationDetailsComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    ResearchInterestsComponent
   ],
   imports: [
     BrowserModule,

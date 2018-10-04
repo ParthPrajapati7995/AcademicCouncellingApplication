@@ -1,61 +1,10 @@
 <mat-accordion class="example-headers-align">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title >
-        Personal Information
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="form">
-      <mat-form-field>
-        <input matInput placeholder="Name as in 10th/12th marksheet">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Father's/Guardian's name">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <h3>Select Gender</h3>
-      <mat-radio-group class="radio">
-          <mat-radio-button value="1">Male</mat-radio-button>
-          &nbsp;
-          <mat-radio-button value="2">Female</mat-radio-button>
-          &nbsp;
-          <mat-radio-button value="3">Transgender</mat-radio-button>
-          &nbsp;
-        </mat-radio-group>
-      <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </div>
-  </mat-expansion-panel>
-
-  <app-education-details (childEvent)="setStep($event)" [step]="step" ></app-education-details>
   
-  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Research Interests
-      </mat-panel-title>
-      <mat-panel-description>
-        Type your name and age
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="form">
-        <mat-form-field>
-            <input matInput placeholder="First name">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Age">
-          </mat-form-field>
-          <mat-action-row>
-            <button mat-button color="warn" (click)="prevStep()">Previous</button>
-            <button mat-button color="primary" (click)="nextStep()">Next</button>
-          </mat-action-row>
-    </div>
-  </mat-expansion-panel>
+  <app-personal-details (childEvent)="setStep($event)" [step]="step"></app-personal-details>
+
+  <app-education-details (childEvent)="setStep($event)" [step]="step"></app-education-details>
+  
+  <app-research-interests (childEvent)="setStep($event)" [step]="step"></app-research-interests>
 
   <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
     <mat-expansion-panel-header>
