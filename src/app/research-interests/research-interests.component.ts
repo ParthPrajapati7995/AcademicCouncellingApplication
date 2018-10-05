@@ -1,12 +1,11 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-
+import { Component, OnInit,  Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-personal-details',
-  templateUrl: './personal-details.component.html',
-  styleUrls: ['./personal-details.component.css']
+  selector: 'app-research-interests',
+  templateUrl: './research-interests.component.html',
+  styleUrls: ['./research-interests.component.css']
 })
-export class PersonalDetailsComponent implements OnInit {
+export class ResearchInterestsComponent implements OnInit {
 
   @Input() public step;
   @Output() public childEvent = new EventEmitter();
@@ -30,5 +29,4 @@ export class PersonalDetailsComponent implements OnInit {
     this.step--;
     this.childEvent.emit(this.step);
   }
-  selected = 'option1';
 }

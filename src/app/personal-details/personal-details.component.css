@@ -1,0 +1,18 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.radio{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.general{
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 15px;
+}
+.subradio{
+  padding-right: 5%;
+}

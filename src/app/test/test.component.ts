@@ -7,16 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  
-  amount:number = 0;
+  amount = 0;
 
   constructor() {
 
   }
 
-  displayDonationAmount(value)
-  {
-    this.amount = this.amount+parseInt(value);
+  displayDonationAmount(value) {
+    this.amount = this.amount + parseInt(value, 10);
   }
   ngOnInit() {
   }
