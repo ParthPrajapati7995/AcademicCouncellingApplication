@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { EducationDetailsModel } from '../data-models/education-details.model';
+import { EducationDetailsModel } from '../../data-models/education-details.model';
 
 @Component({
   selector: 'app-education-details',

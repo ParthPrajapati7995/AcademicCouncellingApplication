@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { FileUploadService } from '../services/file-upload.service';
 import { forkJoin } from 'rxjs';
+import { FileUploadService } from '../../services/file-upload.service';
 
 @Component({
   selector: 'app-file-upload',
