@@ -1,11 +1,8 @@
+<div class="whole">
 <mat-accordion class="example-headers-align">
-  
   <app-personal-details (childEvent)="setStep($event)" [step]="step"></app-personal-details>
-
   <app-education-details (childEvent)="setStep($event)" [step]="step"></app-education-details>
-  
   <app-research-interests (childEvent)="setStep($event)" [step]="step"></app-research-interests>
-
   <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -53,6 +50,7 @@
   </div>
   </mat-expansion-panel>
 </mat-accordion>
+</div>
 
 <!-- Copyright 2018 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatRadioModule, MatDialogModule, MatListModule, MatProgressBarModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule, MatInputModule, MatIconModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {MatSelectModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSelectModule,
     MatButtonModule,
     MatDialogModule,
     MatListModule,

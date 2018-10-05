@@ -1,67 +1,71 @@
-<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true" (closed)="panelOpenState = false"
-  hideToggle>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
+<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
       Personal Information
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-  <div class="form">
-    <mat-form-field>
-      <input matInput placeholder="Name as in 10th/12th marksheet">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Father's/Guardian's name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <h3>Select Gender</h3>
-    <mat-radio-group class="radio">
-      <mat-radio-button value="1">Male</mat-radio-button>
-      &nbsp;
-      <mat-radio-button value="2">Female</mat-radio-button>
-      &nbsp;
-      <mat-radio-button value="3">Transgender</mat-radio-button>
-      &nbsp;
-    </mat-radio-group>
-    <h3>Address</h3>
-    <mat-form-field>
-      <input matInput placeholder="Contact person">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address line 1">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Address line 2">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="City">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="State">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Pin">
-    </mat-form-field>
-
-    <h3>Contact Information</h3>
-    <mat-form-field>
-      <input matInput placeholder="STD code">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Telephone number">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Mobile">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email">
-    </mat-form-field>
-
-    <mat-action-row>
-      <button mat-button color="primary" (click)="nextComponent()">Next</button>
-    </mat-action-row>
-  </div>
-</mat-expansion-panel>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <hr style="border: 0.8px solid #2421c4;" />
+    <div class="form">
+      <mat-form-field>
+        <input matInput placeholder="Name as in 10th/12th marksheet">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Father's/Guardian's name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <h3>Select Gender</h3>
+      <mat-radio-group class="radio" >
+        <mat-radio-button class="subradio" value="1">Male</mat-radio-button>
+        <mat-radio-button class="subradio" value="2">Female</mat-radio-button>
+        <mat-radio-button class="subradio" value="3">Transgender</mat-radio-button>
+      </mat-radio-group>
+      <h3>Address</h3>
+      <div class="general">
+        <mat-form-field>
+          <input matInput placeholder="Contact Person">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Address line 1">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Address line 2">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="City">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="State" [(value)]="selected">
+            <mat-option value="option1">Gujarat</mat-option>
+            <mat-option value="option2">Rajasthan</mat-option>
+            <mat-option value="option3">MP</mat-option>
+            <mat-option value="option4">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="PIN Code">
+        </mat-form-field>
+      </div>
+      <h3>Contact Information</h3>
+      <div class="general">
+        <mat-form-field>
+          <input matInput placeholder="STD Code">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Telephone Number">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Mobile Number">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </div>
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextComponent()">Next</button>
+      </mat-action-row>
+    </div>
+  </mat-expansion-panel>

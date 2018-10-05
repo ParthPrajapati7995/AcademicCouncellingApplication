@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-personal-details',
@@ -29,4 +30,5 @@ export class PersonalDetailsComponent implements OnInit {
     this.step--;
     this.childEvent.emit(this.step);
   }
+  selected = 'option1';
 }
