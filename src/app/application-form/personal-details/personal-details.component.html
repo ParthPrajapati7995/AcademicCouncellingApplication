@@ -5,6 +5,20 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <hr style="border: 0.8px solid #2421c4;" />
+
+    <!--Select this part for image upload and display-->
+    <input type="file" #file style="display: none" accept=".jpg,.jpeg,.png" (change)="onImageAdded($event)" single />
+    <table>
+      <tr>
+        <img class="profile-picture" [src]="imageFilePath" *ngIf="imageFilePath">
+      </tr>
+      <tr>
+        <button mat-raised-button color="primary" class="add-files-btn" (click)="addImage()">
+          Upload Picture
+        </button>
+      </tr>
+    </table>
+
     <div class="form">
       <mat-form-field>
         <input matInput placeholder="Name as in 10th/12th marksheet">
