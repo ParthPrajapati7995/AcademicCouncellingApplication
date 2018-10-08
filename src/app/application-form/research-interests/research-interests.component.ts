@@ -1,4 +1,5 @@
 import { Component, OnInit,  Input, Output, EventEmitter } from '@angular/core';
+import { ResearchDetailsModel } from '../../data-models/research-details.model';
 
 @Component({
   selector: 'app-research-interests',
@@ -10,11 +11,23 @@ export class ResearchInterestsComponent implements OnInit {
   @Input() public step;
   @Output() public childEvent = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
+  researchInterests : Array<ResearchDetailsModel>
+  
+  constructor() { 
+    this.researchInterests = new Array<ResearchDetailsModel>();
   }
 
+  ngOnInit() {
+    this.researchInterests.push(new ResearchDetailsModel());
+  }
+
+  addDetail(): void {
+    this.researchInterests.push(new ResearchDetailsModel());
+  }
+
+  removeDetail(indx: number): void {
+    this.researchInterests.splice(indx, 1);
+  }
   setStep(index: number) {
     this.step = index;
     this.childEvent.emit(this.step);
