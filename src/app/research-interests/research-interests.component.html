@@ -7,13 +7,42 @@
       Type your name and age
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <div class="form">
+  <div>
+    <b>Details of additional degree(s), if any</b>
+    <div *ngFor="let detail of researchInterests; let i = index">
+        <button *ngIf="i===(researchInterests.length-1)" mat-button color="primary" (click)="addDetail()">
+            <mat-icon>add_circle_outline</mat-icon>
+        </button>  
       <mat-form-field>
-          <input matInput placeholder="First name">
+            <input matInput placeholder="Name of Institute" [(ngModel)]="researchInterests[i].instituteName">
+        </mat-form-field>
+       
+        <mat-form-field>
+            <input matInput placeholder="Duration(Months)" [(ngModel)]="researchInterests[i].duration">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Age">
+            <input matInput placeholder="position Held" [(ngModel)]="researchInterests[i].position">
         </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Topic of Research" [(ngModel)]="researchInterests[i].topic">
+        </mat-form-field>
+        <button *ngIf="i!=0 || i!=(researchInterests.length-1)" mat-button color="warn" (click)="removeDetail(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+    </div>
+    <div class="form">
+        <h4>Indicate your Research Interests / Areas:</h4>
+        <mat-form-field>
+            <input matInput placeholder="Preference 1">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preference 2">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preference 3">
+        </mat-form-field>
+    </div>
         <mat-action-row>
           <button mat-button color="warn" (click)="prevComponent()">Previous</button>
           <button mat-button color="primary" (click)="nextComponent()">Next</button>
