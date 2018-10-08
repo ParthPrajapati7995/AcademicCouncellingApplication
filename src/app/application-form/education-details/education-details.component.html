@@ -8,16 +8,60 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
   <div class="form">
-    <div *ngFor="let detail of educationDetails; let i = index">
+      <mat-form-field>
+          <input matInput placeholder="Percentage of Marks in 10th">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Percentage of Marks in 12th">
+      </mat-form-field>
+      <b>Details of highest academic qualifying degree obtained :</b>
+      <div class="form">
+          <mat-form-field>
+              <input matInput placeholder="Degree">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Discipline">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="University/Institute">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="State">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Month & Year:(Obtained/Expected)">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker startView="multi-year" panelClass="example-month-picker" ></mat-datepicker>    
+            </mat-form-field>
+            <h4>Latest Cumulative Percentage/CGPA</h4>
+            <div>
+            <mat-radio-button >Percentage of Marks</mat-radio-button>
+            <mat-form-field>
+                <input matInput placeholder="percentage">
+            </mat-form-field>
+            <mat-radio-button>CGPA out of</mat-radio-button>
+            <mat-form-field appearance="outline">
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="CGPA">
+            </mat-form-field>
+            </div>
+      </div>
+      <b>Details of additional degree(s), if any</b>
+    <div class="form" *ngFor="let detail of educationDetails; let i = index">
       <mat-form-field>
         <input matInput placeholder="Degree" [(ngModel)]="educationDetails[i].degree">
       </mat-form-field>
+      <button *ngIf="i===(educationDetails.length-1)" mat-button color="primary" (click)="addDetail()">
+          <mat-icon>add_circle_outline</mat-icon>
+      </button>
       <mat-form-field>
         <input matInput placeholder="Discipline" [(ngModel)]="educationDetails[i].discipline">
       </mat-form-field>
-      <button *ngIf="i===(educationDetails.length-1)" mat-button color="primary" (click)="addDetail()">
-        <mat-icon>add_circle_outline</mat-icon>
-      </button>
       <mat-form-field>
         <input matInput placeholder="University/Institute" [(ngModel)]="educationDetails[i].institute">
       </mat-form-field>
@@ -29,6 +73,43 @@
       </button>
       <mat-form-field>
         <input matInput placeholder="State" [(ngModel)]="educationDetails[i].state">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Month & Year:(Obtained/Expected)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="multi-year" panelClass="example-month-picker" ></mat-datepicker>    
+      </mat-form-field>
+      <h4>Latest Cumulative Percentage/CGPA</h4>
+            <div>
+            <mat-radio-button>Percentage of Marks</mat-radio-button>
+            <mat-form-field>
+                <input matInput placeholder="percentage">
+            </mat-form-field>
+            <mat-radio-button>CGPA out of</mat-radio-button>
+            <mat-form-field appearance="outline">
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="CGPA">
+            </mat-form-field>
+            </div>
+    </div>
+    <div>
+      <h4>Other Competitive (All India) Examinations, if any</h4>
+      <mat-form-field>
+          <input matInput placeholder="Name of Exam">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Year of Exam">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Discipline">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="score">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Outof">
       </mat-form-field>
     </div>
     <mat-action-row>
