@@ -20,13 +20,13 @@
     </table>
     <div class="form">
       <mat-form-field>
-        <input matInput placeholder="Name as in 10th/12th marksheet">
+        <input matInput placeholder="Name as in 10th/12th marksheet" [(ngModel)]="personalId.fullName">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Father's/Guardian's name">
+        <input matInput placeholder="Father's/Guardian's name" [(ngModel)]="personalId.gName">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth">
+        <input matInput [matDatepicker]="picker" placeholder="Select Date of Birth" [(ngModel)]="personalId.dob">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -40,42 +40,39 @@
       <h3>Address</h3>
       <div class="general">
         <mat-form-field>
-          <input matInput placeholder="Contact Person">
+          <input matInput placeholder="Contact Person" [(ngModel)]="address.contactperson">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Address line 1">
+          <input matInput placeholder="Address line 1" [(ngModel)]="address.addressline1">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Address line 2">
+          <input matInput placeholder="Address line 2" [(ngModel)]="address.addressline2">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="City">
+          <input matInput placeholder="City" [(ngModel)]="address.city">
         </mat-form-field>
         <mat-form-field>
-          <mat-select placeholder="State" [(value)]="selected">
-            <mat-option value="option1">Gujarat</mat-option>
-            <mat-option value="option2">Rajasthan</mat-option>
-            <mat-option value="option3">MP</mat-option>
-            <mat-option value="option4">Option 3</mat-option>
-          </mat-select>
+            <mat-select placeholder="State" [(ngModel)]="address.state">
+              <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="PIN Code">
+          <input matInput placeholder="PIN Code" [(ngModel)]="address.pincode">
         </mat-form-field>
       </div>
       <h3>Contact Information</h3>
       <div class="general">
         <mat-form-field>
-          <input matInput placeholder="STD Code">
+          <input matInput placeholder="STD Code" [(ngModel)]="cInfo.STD_code">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Telephone Number">
+          <input matInput placeholder="Telephone Number" [(ngModel)]="cInfo.telno">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Mobile Number">
+          <input matInput placeholder="Mobile Number" [(ngModel)]="cInfo.mobno">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Email">
+          <input matInput placeholder="Email" [(ngModel)]="cInfo.email">
         </mat-form-field>
         <b>Please make sure your phone number and E-mail are correct. 
           All Communication will be made through email/SMS/WebSite update </b>
