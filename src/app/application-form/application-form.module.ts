@@ -7,7 +7,7 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { ResearchInterestsComponent } from './research-interests/research-interests.component';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatRadioModule, MatDialogModule, MatListModule, MatProgressBarModule, MatSelectModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -37,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatDatepickerModule,
     MatIconModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ApplicationFormComponent,
