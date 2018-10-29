@@ -1,0 +1,12 @@
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldBox{
+  width: 6%; margin-left: 0.5%; margin-right: 0.5%;
+}
+
+.outlineBox{
+  width: 4%; margin-left: 0.5%; margin-right: 0.5%;
+}
