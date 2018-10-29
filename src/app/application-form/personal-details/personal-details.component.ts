@@ -3,6 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Address } from '../../data-models/Address'
 import { PersonalInfo } from '../../data-models/PersonalInfo';
 import { ContactInfo } from '../../data-models/ContactInfo';
+import {FormControl, FormGroupDirective, NgForm, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
 
 @Component({
   selector: 'app-personal-details',
@@ -82,4 +93,24 @@ export class PersonalDetailsComponent implements OnInit {
     this.step--;
     this.childEvent.emit(this.step);
   }
+
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  mobileFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('[0-9]\\d{9}'),
+  ]);
+
+  matcher = new MyErrorStateMatcher();
 }
